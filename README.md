@@ -4,7 +4,7 @@
 
 - Production
 ```
-npm i express-session express-mysql-session express-validator bcryptjs passport passport-local
+npm i express @types/express express-session mysql express-mysql-session express-validator bcryptjs passport passport-local
 ```
 
 - Development

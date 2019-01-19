@@ -8,8 +8,7 @@
         "strict": true,
         "noImplicitAny": true,
         "moduleResolution": "node",
-        "baseUrl": "./src",
-        "esModuleInterop": true 
+        "baseUrl": "./src"
     },
     "include": [
         "src/**/*.ts"

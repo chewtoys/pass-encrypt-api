@@ -1,6 +1,6 @@
 import { Application, Request, Response, Router } from 'express';
 import { IndexController } from '../app/controllers/index.controller';
-import { IRoute } from '../core/RouteBase';
+import { IRoute } from '../core/route-base';
 
 export class IndexRoute implements IRoute {
 

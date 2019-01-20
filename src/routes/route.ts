@@ -1,14 +1,13 @@
-import {
-    Application,
-    Request,
-    Response
-} from 'express';
+import { BaseRoute, IRoute } from '../core/RouteBase';
+import { Application } from 'express';
+
 import { IndexRoute } from './index.route';
 
 
-export class Route {
+export class Route extends BaseRoute {
 
-    constructor(private app: Application) {
-        new IndexRoute(this.app);
+    constructor(app: Application) {
+        super(app);
+        this.registerRoute(new IndexRoute());
     }
 }

@@ -1,17 +1,25 @@
-import {
-    Application,
-    Request,
-    Response
-} from 'express';
-
+import { Application, Request, Response, Router } from 'express';
 import { IndexController } from '../app/controllers/index.controller';
+import { IRoute } from '../core/RouteBase';
 
+export class IndexRoute implements IRoute {
 
-export class IndexRoute {
+    route: Router;
+    baseUrl: string;
+    private indexController: IndexController;
 
-    private indexController = new IndexController();
+    constructor() {
+        this.route = Router();
+        this.baseUrl = '/';
+        this.indexController = new IndexController();
+        this.defineRoutes();
+    }
 
-    constructor(private app: Application) {
-        this.app.route('/').get(this.indexController.index);
+    private defineRoutes() {
+        this.route.get(this.baseUrl, this.indexController.index);
+    }
+
+    public getRoute(): Router {
+        return this.route;
     }
 }

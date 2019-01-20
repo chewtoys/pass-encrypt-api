@@ -1,21 +1,27 @@
 import * as express from 'express';
+import * as path from 'path';
 import { Middleware } from './app/middlewares/middleware';
 import { Route } from './routes/route';
 
+
 export class App {
 
-    public app: express.Application;
+    private app: express.Application;
     private middleware: Middleware;
-    private route: Route;
 
     constructor() {
         this.app =  express();
         this.config();
         this.middleware = new Middleware(this.app);
-        this.route = new Route(this.app);
+        new Route(this.app).initalizeRoutes();
     }
 
-    private config() {
-        this.app.set('port', 3000);
+    private config(): void {
+        this.app.use(express.json());
+        this.app.use(express.urlencoded({ extended: false }));
+    }
+
+    public getApp(): express.Application {
+        return this.app;
     }
 }

@@ -1,4 +1,4 @@
-import * as Sequelize from 'sequelize';
+/*import * as Sequelize from 'sequelize';
 import {
     sequelize
 } from '../../database';
@@ -19,4 +19,4 @@ const User = sequelize.define('user', {
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
     token: Sequelize.TEXT,
-})
+})*/

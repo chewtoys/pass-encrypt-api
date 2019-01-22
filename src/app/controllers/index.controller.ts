@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import db from '../../db/test/index';
 
 export class IndexController {
     

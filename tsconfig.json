@@ -9,7 +9,8 @@
         "noImplicitAny": true,
         "moduleResolution": "node",
         "baseUrl": "./src",
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "lib": ["es2017"]
     },
     "include": [
         "src/**/*.ts"

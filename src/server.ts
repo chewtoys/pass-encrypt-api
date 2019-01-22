@@ -1,23 +1,18 @@
 import * as http from "http"
 import { Application } from 'express';
-import { App } from "./app";
 
-const appConfig = require('./config/app.json');
+const port = 3000 || process.env.PORT;
 
 export class Server {
 
     public http = http;
 
-    constructor(private app: Application, private port?: number){
-        if(!port) {
-            this.port = appConfig.port;
-        }
-    }
+    constructor(private app: Application){ }
 
     public start(): void {
         console.log('App is starting...');
-        console.log(`http://localhost:${this.port}`);
+        console.log(`http://localhost:${port}`);
         this.http.createServer(this.app)
-            .listen(this.port);
+            .listen(port);
     }
 }

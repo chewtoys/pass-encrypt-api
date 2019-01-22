@@ -4,7 +4,6 @@ import { App } from "./app";
 
 const appConfig = require('./config/app.json');
 
-
 export class Server {
 
     public http = http;

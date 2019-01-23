@@ -5,18 +5,16 @@ import { IRoute } from '../core/route-base';
 export class IndexRoute implements IRoute {
 
     route: Router;
-    baseUrl: string;
     private indexController: IndexController;
 
     constructor() {
         this.route = Router();
-        this.baseUrl = '/';
         this.indexController = new IndexController();
         this.defineRoutes();
     }
 
     private defineRoutes() {
-        this.route.get(this.baseUrl, this.indexController.index);
+        this.route.get('/', this.indexController.index);
     }
 
     public getRoute(): Router {

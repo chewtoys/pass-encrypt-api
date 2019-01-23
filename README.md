@@ -18,9 +18,9 @@ API simple para encriptar contraseñas desarrollada con TypeScript y Express js
 * Instalar dependencias globales o locales de **TypeScript**
     ```npm
     # Global
-    npm install -g typescrypt ts-node
+    npm install -g typescript ts-node
     # Local
-    npm install typescrypt ts-node
+    npm install typescript ts-node
     ```
 
 * Instalar dependencias

@@ -6,9 +6,12 @@ import { IndexRoute } from './index.route';
 
 export class APIRotue extends BaseRoute {
 
-    constructor(app: Application) {
-        super(app);
+    constructor() {
+        super();
         this.uriType = '/api';
+    }
+
+    defineRoutes() {
         this.registerRoute(new IndexRoute());
     }
 }

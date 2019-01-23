@@ -11,17 +11,18 @@ export interface IRoute {
 
 export class BaseRoute {
     routes: IRoute[] = [];
-    uriType: uriType = '/';
-
-    constructor(private app: Application) {}
+    uriType: uriType = '/'
     
     registerRoute(route: IRoute) {
         this.routes.push(route);
     }
 
-    initalizeRoutes() {
+    defineRoutes() { }
+
+    initalizeRoutes(app: Application) {
+        this.defineRoutes();
         this.routes.forEach(route => {
-            this.app.use(this.uriType, route.getRoute());
+            app.use(this.uriType, route.getRoute());
         })
     }
 }

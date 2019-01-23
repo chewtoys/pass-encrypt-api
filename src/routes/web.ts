@@ -6,8 +6,7 @@ import { IndexRoute } from './index.route';
 
 export class WebRotue extends BaseRoute {
 
-    constructor(app: Application) {
-        super(app);
+    defineRoutes() {
         this.registerRoute(new IndexRoute());
     }
 }

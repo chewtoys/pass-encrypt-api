@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { Middleware } from './app/middlewares/middleware';
-import { Route } from './routes/route';
+import { APIRotue } from './routes/api';
+import { WebRotue } from './routes/web';
 
 
 export class App {
@@ -12,7 +13,8 @@ export class App {
         this.app =  express();
         this.config();
         this.middleware = new Middleware(this.app);
-        new Route(this.app).initalizeRoutes();
+        new WebRotue().initalizeRoutes(this.app);
+        new APIRotue().initalizeRoutes(this.app);
     }
 
     private config(): void {

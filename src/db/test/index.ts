@@ -1,5 +1,6 @@
 import * as Sequelize from 'sequelize';
 import { initUser } from './user';
+import { initTest } from './test';
 
 const env = process.env.NODE_ENV || 'development';
 const config = require('../../config/config.json')[env];
@@ -11,6 +12,7 @@ const db = {
     sequelize,
     Sequelize,
     User: initUser(sequelize),
+    Test: initTest(sequelize),
 };
 
 Object.values(db).forEach((model: any) => {

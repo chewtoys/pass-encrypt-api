@@ -4,6 +4,6 @@
 @host = {{hostname}}:{{port}}
 ###
 
-GET http://{{host}}/ HTTP/1.1
+GET http://{{host}}/api HTTP/1.1
 
 ###

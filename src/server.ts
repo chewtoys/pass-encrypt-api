@@ -1,7 +1,6 @@
 import * as http from "http"
 import { Application } from 'express';
-
-const port = 3000 || process.env.PORT;
+import { PORT } from './utils/config';
 
 export class Server {
 
@@ -11,8 +10,8 @@ export class Server {
 
     public start(): void {
         console.log('App is starting...');
-        console.log(`http://localhost:${port}`);
+        console.log(`http://localhost:${PORT}`);
         this.http.createServer(this.app)
-            .listen(port);
+            .listen(PORT);
     }
 }
